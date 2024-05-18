@@ -1,14 +1,12 @@
 /*Estilo geral*/
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
 }
 
 body {
-    height: 100vh;
     background-color: #6C0345;
     margin: 0;
     padding: 0;
@@ -18,7 +16,6 @@ main {
     margin: 50px;
 }
 
-/* Flexbox utility */
 .flex {
     display: flex;
 }
@@ -34,7 +31,6 @@ header .interface {
     align-items: center;
     justify-content: space-between;
     background-color: #DC6B19;
-    width: 100%;
     padding: 20px;
     border-bottom: 4px #F7C566 solid;
 }
@@ -59,15 +55,14 @@ header nav ul li {
     padding: 0 5px;
     background-color: #F7C566;
     border-radius: 50px;
-    margin: 20px 70px;
+    margin: 20px 10px;
     border: 3px #9a005a solid;
 }
 
-header nav ul li #proj,
-header nav ul li #ap,
-header nav ul li #xp {
+header nav ul li a {
     padding: 10px 15px;
     font-weight: 700;
+    color: #9a005a;
 }
 
 header .nav3 button {
@@ -104,19 +99,21 @@ header .nav3 button:hover {
 
 /* Top of website */
 section.top-of-website .img-top {
-    margin: 300px;
+    margin: 20px;
 }
 
 section.top-of-website .flex {
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    text-align: center;
 }
 
 .top-of-website h1 {
     color: #F7C566;
-    line-height: 40px;
-    position: relative;
+    line-height: 1.2em;
+    font-size: 2em;
+    margin: 20px 0;
 }
 
 .top-of-website h1 span {
@@ -125,16 +122,16 @@ section.top-of-website .flex {
 
 .top-of-website .txt-top h2 {
     color: #F7C566;
-    margin: 40px 0;
-    position: relative;
+    margin: 20px 0;
+    font-size: 1.5em;
 }
 
 .top-of-website .img-top img {
-    position: relative;
     animation: flutuar 1s ease-in-out infinite alternate;
-    border-radius: 5000px;
+    border-radius: 50%;
     background-color: #F7C566;
     border: 5px #F7C566 solid;
+    max-width: 100%;
 }
 
 @keyframes flutuar {
@@ -147,22 +144,26 @@ section.top-of-website .flex {
 }
 
 main .top-of-website .interface .txt-top {
-    padding: 100px 0 0 50px;
+    padding: 20px;
 }
 
 hr {
-    padding: 0;
     border: 3px solid #DC6B19;
-    margin: 50px;
+    margin: 50px 0;
 }
 
 /* Sobre mim */
 section.topic div #mod {
-    content: "";
     display: block;
     width: 2px;
     height: 50px;
     background-color: #F7C566;
+}
+
+section.topics .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 section.topics div.caixa-topic,
@@ -172,45 +173,55 @@ section.topics div.caixa-topic3 {
     background-color: #9a005a;
     border-radius: 20px;
     display: flex;
-    margin: 10px;
-    position: relative;
+    flex-direction: column;
     align-items: center;
-    padding: 41px;
+    margin: 20px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
 }
 
 section.topics div.caixa-topic h2,
 section.topics div.caixa-topic2 h2,
 section.topics div.caixa-topic3 h2 {
-    margin: 0 40px;
+    margin: 0 0 20px 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+section.topics div.caixa-topic p,
+section.topics div.caixa-topic2 p,
+section.topics div.caixa-topic3 p {
+    text-align: justify;
 }
 
 /* Rodape */
 footer {
     background-color: #9a005a;
     color: #F7C566;
-    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
 }
 
 footer div.flex ul {
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
 }
 
 footer div.flex a {
     text-decoration: none;
     color: #F7C566;
-    padding-left: 27px;
+    padding-left: 10px;
 }
 
 div.flex li.contato {
-    padding-left: 45px;
-    position: relative;
-    bottom: 25px;
+    padding-left: 0;
+    margin: 10px 0;
 }
 
 div.flex li.email {
-    position: relative;
-    bottom: 15px;
+    margin: 10px 0;
 }
 
 div.flex li.icons {
@@ -221,96 +232,59 @@ footer ul li {
     margin: 10px;
 }
 
-footer div.flex {
-    position: relative;
-    justify-content: center;
-}
-
 footer hr {
-    margin: 35px;
+    margin: 20px;
 }
 
 /* Responsiveness */
-@media (max-width: 1024px) {
-    main {
-        margin: 30px;
-    }
-
-    header a {
-        padding: 20px 2%;
-    }
-
-    header nav ul li {
-        margin: 15px 50px;
-    }
-
-    .top-of-website .img-top {
-        margin: 150px;
-    }
-
-    section.top-of-website .flex {
-        gap: 30px;
-    }
-
-    .top-of-website h1 {
-        font-size: 1.5em;
-        line-height: 1.2em;
-    }
-
-    .top-of-website .txt-top h2 {
-        font-size: 1.2em;
-        margin: 20px 0;
-    }
-
-    footer div.flex {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    footer div.flex a {
-        padding-left: 10px;
-    }
-}
-
 @media (max-width: 768px) {
     main {
         margin: 20px;
     }
 
     header a {
-        padding: 10px 2%;
+        padding: 20px 2%;
+    }
+
+    header .interface {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    header nav ul {
+        padding: 0;
     }
 
     header nav ul li {
-        margin: 10px 30px;
+        margin: 10px;
     }
 
-    .top-of-website .img-top {
-        margin: 100px;
-    }
-
-    section.top-of-website .flex {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .top-of-website h1 {
-        font-size: 1.2em;
-        line-height: 1.1em;
-    }
-
-    .top-of-website .txt-top h2 {
-        font-size: 1em;
+    header .nav3 button {
         margin: 10px 0;
     }
 
-    footer div.flex {
-        flex-direction: column;
-        align-items: center;
+    .top-of-website h1 {
+        font-size: 1.5em;
     }
 
-    footer div.flex a {
-        padding-left: 5px;
+    .top-of-website .txt-top h2 {
+        font-size: 1.2em;
+    }
+
+    .top-of-website .img-top {
+        margin: 10px;
+    }
+
+    section.topics .box {
+        flex-direction: column;
+    }
+
+    section.topics div.caixa-topic,
+    section.topics div.caixa-topic2,
+    section.topics div.caixa-topic3 {
+        margin: 10px 0;
+        padding: 20px;
     }
 }
 
@@ -320,38 +294,47 @@ footer hr {
     }
 
     header a {
-        padding: 5px 1%;
+        padding: 10px 1%;
+    }
+
+    header .interface {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+
+    header nav ul {
+        padding: 0;
     }
 
     header nav ul li {
-        margin: 5px 10px;
+        margin: 5px;
     }
 
-    .top-of-website .img-top {
-        margin: 50px;
-    }
-
-    section.top-of-website .flex {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .top-of-website h1 {
-        font-size: 1em;
-        line-height: 1em;
-    }
-
-    .top-of-website .txt-top h2 {
-        font-size: 0.9em;
+    header .nav3 button {
         margin: 5px 0;
     }
 
-    footer div.flex {
-        flex-direction: column;
-        align-items: center;
+    .top-of-website h1 {
+        font-size: 1.2em;
     }
 
-    footer div.flex a {
-        padding-left: 2px;
+    .top-of-website .txt-top h2 {
+        font-size: 1em;
+    }
+
+    .top-of-website .img-top {
+        margin: 5px;
+    }
+
+    section.topics .box {
+        flex-direction: column;
+    }
+
+    section.topics div.caixa-topic,
+    section.topics div.caixa-topic2,
+    section.topics div.caixa-topic3 {
+        margin: 5px 0;
+        padding: 10px;
     }
 }
